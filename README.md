@@ -2,4 +2,5 @@
 CTS285 System Analysis & Design 2025
 > ### Team Members
 > - stevens0nL (#7855)
-> - Shane Jobes(#9849)
+> - Shane Jobes (#9849)
+> - DaDankMan (#0050)
