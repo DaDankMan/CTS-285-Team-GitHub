@@ -1,2 +1,7 @@
 Test - Damian
 thisisatestlol - Sejiro
+menu system
+Generate math problem
+check if correct
+Memory bank via csv
+(create memory bank) or (run off memory bank.
