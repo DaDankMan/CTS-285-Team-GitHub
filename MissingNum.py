@@ -1,3 +1,4 @@
+# By Damian Dotson
 import random
 
 def get_difficulty_range():
@@ -89,3 +90,4 @@ if __name__ == "__main__":
             print("✅ Correct!\n")
         else:
             print(f"❌ Incorrect. The correct answer was {correct_answer}.\n")
+
