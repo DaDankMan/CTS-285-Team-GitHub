@@ -1,40 +1,82 @@
 # MEMROY BANK CODE (IN PROGRESS)
 
 import csv
+import random
+
+def main():
+    # sub menu
+    print("\nWelcome to the Memory Bank Game!\n")
+    print("Choose an option:")
+    print("---------------------")
+    print("1. Input your own 10 equations")
+    print("2. Generate 10 basic math equations")
+    print("3. Practice from a saved file")
+    print("---------------------\n")
+    
+    choice = input("Enter 1-3: ")
+    
+    if choice == '1':
+        equations = input_equations()
+        filename = input("Enter filename to save your equations (e.g. my_equations.csv): ").strip()
+        
+        if not filename:
+            filename = "memory_bank.csv"
+        save_to_csv(equations, filename)
+        practice(equations)
+        
+    elif choice == '2':
+        equations = generate_equations()
+        filename = "generated_equations.csv"
+        save_to_csv(equations, filename)
+        print(f"Generated equations saved to {filename}")
+        practice(equations)
+        
+    elif choice == '3':
+        filename = input("Enter the filename of the saved equations (e.g. memory_bank.csv): ").strip()
+        if not filename:
+            print("No filename entered. Exiting.")
+            return
+            
+        equations = load_from_csv(filename)
+        if equations:
+            practice(equations)
+        else:
+            print("No equations loaded. Exiting.")
+    else:
+        print("Invalid choice. Exiting.")
+
 
 def is_equation_correct(equation_str):
     """
     Checks if the equation string is ackshaully correct.
     Format is: expression = result (e.g., "1+1=2" or wtv)
     """
-  
+    
     if '=' not in equation_str:
         return False, None, None
     left, right = equation_str.split('=', 1)
     left = left.strip()
     right = right.strip()
     try:
-        # Evaluates left side expression
         left_val = eval(left)
-        # Evaluates right side expression (in case it's an expression, not just a number)
         right_val = eval(right)
-        return left_val == right_val, left, right_val # guhh
-    except Exception as e:
+        return left_val == right_val, left, right_val
+    except Exception:
         return False, None, None
 
-def input_equations(): #self-explanatory
+def input_equations(): # uses format
     equations = []
-    print("Please input 10 equations in the form 'expression = result' (e.g. 2+2=4):")
+    print("\nInput 10 equations in the form 'expression = result' (e.g. 2+2=4)\nINPUT:")
     while len(equations) < 10:
         eq = input(f"Equation {len(equations)+1}: ")
         correct, expr, ans = is_equation_correct(eq)
         if not correct:
-            print("Incorrect equation or invalid format. Please try again.")
+            print("Uh-oh! Incorrect equation or invalid format.\nPlease try again.\n")
         else:
             equations.append((expr, ans))
     return equations
 
-def save_to_csv(equations, filename="memory_bank.csv"): #also self-explanatory
+def save_to_csv(equations, filename="memory_bank.csv"): # saves to csv thingy
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Expression", "Answer"])
@@ -42,9 +84,7 @@ def save_to_csv(equations, filename="memory_bank.csv"): #also self-explanatory
             writer.writerow([expr, ans])
     print(f"Equations saved to {filename}")
 
-def load_from_csv(filename="memory_bank.csv"): 
-  # self-explanatory x3
-  # add option to generate csv file or computer made equations..?? (mayhaps)
+def load_from_csv(filename="memory_bank.csv"): # pulls from csv thingy
     equations = []
     try:
         with open(filename, mode='r') as file:
@@ -57,14 +97,38 @@ def load_from_csv(filename="memory_bank.csv"):
         print(f"No saved file named {filename} found.")
     return equations
 
+def generate_equations(): # auto gen math problems
+    equations = []
+    operations = ['+', '-', '*', '/']
+    print("Generating 10 basic math equations...")
+    while len(equations) < 10:
+        a = random.randint(1, 20)
+        b = random.randint(1, 20)
+        op = random.choice(operations)
+
+        # used ai to amek decision shit
+        if op == '/':
+            a = a * b  # ensures integer division
+        expr = f"{a} {op} {b}"
+        try:
+            ans = eval(expr)
+            if op == '/':
+                ans = round(ans, 2)
+            else:
+                ans = int(ans)
+            equations.append((expr, ans))
+        except Exception:
+            continue
+    return equations
+
 def practice(equations):
-    print("\nLet's practice your equations!")
-    score = 0
+    print("\nLet's practice your equations!\n")
+    score = 0 # keepin score/results of practice 
     for expr, ans in equations:
         user_ans = input(f"What is {expr}? ")
         try:
             user_ans_val = float(user_ans)
-            if abs(user_ans_val - ans) < 1e-6:
+            if abs(user_ans_val - ans) < 1e-2:
                 print("Correct!")
                 score += 1
             else:
@@ -73,19 +137,7 @@ def practice(equations):
             print(f"Invalid input. The correct answer is {ans}.")
     print(f"\nYour score: {score} out of {len(equations)}")
 
-def main():
-    print("Welcome to the Memory Bank Game!")
-    choice = input("Do you want to (1) input new equations or (2) practice saved equations? Enter 1 or 2: ")
-    if choice == '1':
-        equations = input_equations()
-        save_to_csv(equations)
-        practice(equations)
-    elif choice == '2':
-        equations = load_from_csv()
-        if equations:
-            practice(equations)
-    else:
-        print("Invalid choice. Exiting.")
+
 
 if __name__ == "__main__":
     main()
