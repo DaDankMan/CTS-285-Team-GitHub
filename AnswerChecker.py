@@ -1,3 +1,5 @@
+import operator
+
 def answerChecker():
     # Set up game rules, loop starting condition, score, and total questions values
     quit = False
@@ -5,25 +7,21 @@ def answerChecker():
     score = 0
     totalQuest = 0
 
+    
+
     # Start loop getting first equation    
     while not quit:
-        num1 = int(input("Enter your first number: "))
-        operator = input("Operator: ")
+        equation = input("Enter your equation: ")
+        num1 = equation.lstrip(' ')
+        print(num1)
+        operation = equation.rstrip()
         num2 = int(input("Second number: "))
         userAns = int(input("Your Answer: "))
 
-        # Check which operator is being used
-        if operator == "+":
-            ans = num1 + num2
-        elif operator == "-":
-            ans = num1 - num2
-        elif operator == "*":
-            ans = num1 * num2
-        elif operator == "/":
-            ans = num1 / num2
-        else:
-            print("Invalid operator.")
-            return
+        # Dictioinary to decide what operator is being used
+        operatorsDict = {'+': operator.add(num1,num2), '-': operator.sub(num1,num2), '*': operator.mul(num1,num2),
+                      '/': operator.floordiv(num1,num2)}
+        ans = operatorsDict[operation]
         
         # Check if user gave correct answer and adjust score if they did
         if userAns == ans:
