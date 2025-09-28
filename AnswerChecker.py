@@ -11,12 +11,24 @@ def answerChecker():
 
     # Start loop getting first equation    
     while not quit:
-        equation = input("Enter your equation: ")
-        num1 = equation.lstrip(' ')
-        print(num1)
-        operation = equation.rstrip()
-        num2 = int(input("Second number: "))
-        userAns = int(input("Your Answer: "))
+        equation = input("Enter your equation: ").strip()
+        try:
+            expr, userAns = equation.split("=", 1)
+            expr = expr.strip()
+            userAns = userAns.strip()
+        except Exception:
+            print("Invalid equation, try again.")
+            continue
+        try:
+            operation = next(op for op in ['+', '-', '*', '/'] if op in expr)
+        except StopIteration:
+            print("Invalid equation. Please include +, -, *, or /.")
+            continue
+        num1, num2 = expr.split(operation)
+        num1 = int(num1.strip())
+        num2 = int(num2.strip())
+        userAns = int(userAns)
+        
 
         # Dictioinary to decide what operator is being used
         operatorsDict = {'+': operator.add(num1,num2), '-': operator.sub(num1,num2), '*': operator.mul(num1,num2),
@@ -30,7 +42,7 @@ def answerChecker():
         else:
             print ("Your answer is incorrect.")
             # Ask if user wants to see the correct answer
-            seeCorrect = input("Would you likme to see the correct answer? y/n: ")
+            seeCorrect = input("Would you like to see the correct answer? y/n: ")
             if seeCorrect == "y":
                 print (ans)
 
