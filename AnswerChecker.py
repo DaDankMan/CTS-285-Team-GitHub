@@ -1,5 +1,8 @@
 import operator
 
+def main():
+    answerChecker()
+
 def answerChecker():
     # Set up game rules, loop starting condition, score, and total questions values
     quit = False
@@ -24,10 +27,14 @@ def answerChecker():
         except StopIteration:
             print("Invalid equation. Please include +, -, *, or /.")
             continue
-        num1, num2 = expr.split(operation)
-        num1 = int(num1.strip())
-        num2 = int(num2.strip())
-        userAns = int(userAns)
+        try:
+            num1, num2 = expr.split(operation)
+            num1 = int(num1.strip())
+            num2 = int(num2.strip())
+            userAns = int(userAns)
+        except Exception:
+            print("Invalid equation, only two numbers and one operator. Try again.")
+            continue
         
 
         # Dictioinary to decide what operator is being used
@@ -55,4 +62,5 @@ def answerChecker():
             print ("Thanks for playing!")
 
 
-answerChecker()
+if __name__ == "__main__":
+    main()
