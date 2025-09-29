@@ -44,7 +44,8 @@ def answerChecker():
         
         # Check if user gave correct answer and adjust score if they did
         if userAns == ans:
-            print("You got it right!")
+            
+            print("You got it right! Good job! 👍")
             score += 1
         else:
             print ("Your answer is incorrect.")
@@ -56,7 +57,7 @@ def answerChecker():
         # Increment total questions, print score and total questions, ask user to  continue or end loop
         totalQuest += 1
         print("Your score is ", score, "out of" , totalQuest)
-        x = input("Would you like to continue? Input 'q' to quit: ")
+        x = input("Would you like to continue? Type 'q' to quit: ")
         if x == "q":
             quit = True
             print ("Thanks for playing!")
