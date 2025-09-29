@@ -15,6 +15,7 @@ def answerChecker():
     # Start loop getting first equation    
     while not quit:
         equation = input("Enter your equation: ").strip()
+        # Split user answer from equation
         try:
             expr, userAns = equation.split("=", 1)
             expr = expr.strip()
@@ -22,11 +23,13 @@ def answerChecker():
         except Exception:
             print("Invalid equation, try again.")
             continue
+        # Find operator in input equation
         try:
             operation = next(op for op in ['+', '-', '*', '/'] if op in expr)
         except StopIteration:
             print("Invalid equation. Please include +, -, *, or /.")
             continue
+        # Split equation at operator
         try:
             num1, num2 = expr.split(operation)
             num1 = int(num1.strip())
@@ -37,7 +40,7 @@ def answerChecker():
             continue
         
 
-        # Dictioinary to decide what operator is being used
+        # Dictioinary to complete operation
         operatorsDict = {'+': operator.add(num1,num2), '-': operator.sub(num1,num2), '*': operator.mul(num1,num2),
                       '/': operator.floordiv(num1,num2)}
         ans = operatorsDict[operation]
