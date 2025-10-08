@@ -9,10 +9,10 @@ Our materials: [paste your content]
 ## 🧪 Rubric Self-Assessment
 ```
 Product Name:
-- e.g., "SuperWidget Pro"
+- FITDESK
 
 Date:
-- e.g., "2025-10-08" 
+- 2025-10-08
 ```
 
 ### 📄 Marketing Materials:
