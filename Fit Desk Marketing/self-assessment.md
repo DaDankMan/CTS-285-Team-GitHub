@@ -25,12 +25,12 @@ Date:
 #### Rubric Scores:
 | Criterion | Score (1–5) | Notes |
 |----------|-------------|-------|
-| Message Clarity: |             |    dddd   |
-| Visual Appeal:      |             |       |
-| Target Audience:|             |       |
-| Call to Action:     |             |       |
-| Brand Consistency:  |             |       |
-| Overall Impact:     |             |       |
+| Message Clarity: |     4.5        |    dddd   |
+| Visual Appeal:      |    3.5         |       |
+| Target Audience:|       5      |       |
+| Call to Action:     |     3        |       |
+| Brand Consistency:  |      5       |       |
+| Overall Impact:     |       4.2      |       |
 
 <!-- Add or adjust criteria as needed -->
 
