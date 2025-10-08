@@ -52,15 +52,15 @@ Our materials: [paste your content]
 
 ---
 
-### 👥 Team Review
+##### 👥 Team Review
 
-### QA Lead Summary:
+##### QA Lead Summary:
 <!-- QA lead summarizes rubric scores and findings -->
 
-### Team Discussion Notes:
+##### Team Discussion Notes:
 <!-- Key points from team discussion -->
 
-### Final Refinements:
+##### Final Refinements:
 <!-- List final changes made after team review -->
 
 ---
