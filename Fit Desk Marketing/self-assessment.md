@@ -14,7 +14,7 @@ Our materials: [paste your content]
 ### Date:
 <!-- e.g., "2025-10-08" -->
 
----
+
 
 ### 📋 Rubric Used:
 <!-- Paste rubric criteria here or link to RUBRIC.md -->
@@ -40,7 +40,6 @@ Our materials: [paste your content]
 
 <!-- Add or adjust criteria as needed -->
 
----
 
 ### AI Feedback:
 <!-- Paste AI-generated feedback here -->
@@ -63,7 +62,7 @@ Our materials: [paste your content]
 ##### Final Refinements:
 <!-- List final changes made after team review -->
 
----
+
 
 #### ✅ Completion Checklist
 
