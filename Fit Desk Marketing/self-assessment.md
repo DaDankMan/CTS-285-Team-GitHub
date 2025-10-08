@@ -6,27 +6,27 @@ Evaluate the following marketing materials against this rubric:
 [paste rubric]. Provide scores and specific feedback for improvement.
 Our materials: [paste your content]
 ```
-# 🧪 Rubric Self-Assessment
+## 🧪 Rubric Self-Assessment
 
-## Product Name:
+### Product Name:
 <!-- e.g., "SuperWidget Pro" -->
 
-## Date:
+### Date:
 <!-- e.g., "2025-10-08" -->
 
 ---
 
-## 📋 Rubric Used:
+### 📋 Rubric Used:
 <!-- Paste rubric criteria here or link to RUBRIC.md -->
 
 ---
 
-## 📄 Marketing Materials:
+### 📄 Marketing Materials:
 <!-- Paste or link to the marketing content being evaluated -->
 
 ---
 
-## 🤖 AI Evaluation
+### 🤖 AI Evaluation
 
 ### Rubric Scores:
 | Criterion | Score (1–5) | Notes |
@@ -47,12 +47,12 @@ Our materials: [paste your content]
 
 ---
 
-## 🔧 Improvements Made:
+### 🔧 Improvements Made:
 <!-- Describe changes made based on AI feedback -->
 
 ---
 
-## 👥 Team Review
+### 👥 Team Review
 
 ### QA Lead Summary:
 <!-- QA lead summarizes rubric scores and findings -->
@@ -65,7 +65,7 @@ Our materials: [paste your content]
 
 ---
 
-## ✅ Completion Checklist
+#### ✅ Completion Checklist
 
 - [ ] Rubric documented
 - [ ] Materials evaluated
