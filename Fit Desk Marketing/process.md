@@ -1,4 +1,4 @@
-# Process Documentation: [Product Name] Marketing Campaign
+# Process Documentation: FitDesk™️ Marketing Campaign
 
 ## AI Tools Used
 - Chat-GPT
