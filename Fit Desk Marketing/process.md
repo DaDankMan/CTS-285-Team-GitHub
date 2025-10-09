@@ -1,29 +1,22 @@
 # Process Documentation: [Product Name] Marketing Campaign
 
 ## AI Tools Used
-- [List tools: Claude, ChatGPT, DALL-E, etc.]
+- Chat-GPT
 
 ## What Worked Well
-- [Bullet point things that went smoothly]
-- [Prompt strategies that were effective]
-- [Team collaboration highlights]
+- Image generation
 
 ## Challenges Encountered
-- [Issues you ran into]
-- [How you solved them]
+- None
 
 ## Key Learnings
-- [What you learned about prompt engineering]
-- [What you learned about Git workflow]
-- [What you learned about marketing]
+- None
 
 ## Team Collaboration Notes
-- [How you divided work]
-- [How you made decisions]
-- [How you coordinated]
+- Everyone gave suggestions for the ad, which were all factored in
 
 ## Time Breakdown
-- Planning: [X minutes]
-- Content Creation: [X minutes]
-- Refinement: [X minutes]
-- Git Workflow: [X minutes]
+- Planning: 10 minutes
+- Content Creation: 25 minutes
+- Refinement: 15 minutes
+- Git Workflow: 3 minutes
