@@ -60,8 +60,9 @@ if not st.session_state.game_over:
                 st.session_state.score += 1
             else:
                 st.error("❌ Your answer is incorrect.")
-                if st.checkbox("Show correct answer"):
-                    st.info(f"The correct answer is: **{correct_ans}**")
+                st.button("Show correct answer",on_click=_show_correct_callback,args=(correct_answer,),)
+                if st.session_state.get("show_correct"):
+                    st.info(f"Correct answer: {st.session_state.get('correct_to_show')}")
 
             st.session_state.total_questions += 1
 
