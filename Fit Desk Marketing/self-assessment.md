@@ -84,7 +84,7 @@ All campaign elements were in sync with AlgoCratic’s brand identity—very coh
 ```
 ##### Team Discussion Notes:
 ```
-<!-- Key points from team discussion -->
+Good alignment.
 ```
 ##### Final Refinements:
 ```
