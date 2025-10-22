@@ -8,11 +8,16 @@ if "total_questions" not in st.session_state:
     st.session_state.total_questions = 0
 if "game_over" not in st.session_state:
     st.session_state.game_over = False
+# keep these in session state for compatibility, but they are not required for the new behavior
+if "show_correct" not in st.session_state:
+    st.session_state.show_correct = False
+if "correct_to_show" not in st.session_state:
+    st.session_state.correct_to_show = None
 
 st.title("🧠 Equation Answer Checker")
 st.write("Enter a basic equation (e.g., `3 + 5 = 8`) and see if you got it right! Supports +, -, *, and / (integer division).")
 
-# Quit button
+# Quit button only
 if st.button("Quit Game"):
     st.session_state.game_over = True
 
@@ -21,6 +26,10 @@ if not st.session_state.game_over:
     equation = st.text_input("Enter your equation here:", placeholder="e.g. 7 * 6 = 42")
 
     if st.button("Check Answer"):
+        # Reset any previous "show correct" state
+        st.session_state.show_correct = False
+        st.session_state.correct_to_show = None
+
         if "=" not in equation:
             st.warning("❌ Invalid format. Make sure to include `=` in your equation.")
         else:
@@ -32,7 +41,7 @@ if not st.session_state.game_over:
             try:
                 operation = next(op for op in ['+', '-', '*', '/'] if op in expr)
             except StopIteration:
-                st.error("Invalid equation. Please include +, -, *, or /.")
+                st.error("Invalid equation. Please include +, -, *,, or /.")
                 st.stop()
 
             # Split into numbers
@@ -60,9 +69,10 @@ if not st.session_state.game_over:
                 st.session_state.score += 1
             else:
                 st.error("❌ Your answer is incorrect.")
-                st.button("Show correct answer",on_click=_show_correct_callback,args=(correct_answer,),)
-                if st.session_state.get("show_correct"):
-                    st.info(f"Correct answer: {st.session_state.get('correct_to_show')}")
+                # Store the correct answer so it persists if needed elsewhere
+                st.session_state.correct_to_show = correct_ans
+                # Immediately show the correct answer in a compact info box
+                st.info(f"Correct answer: {st.session_state.correct_to_show}")
 
             st.session_state.total_questions += 1
 
