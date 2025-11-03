@@ -1,0 +1,4 @@
+The AI helped me most in doing things that I had never done before. I was able to create the application entirley with ChatGPT, and the explanations it gave along the way helped to understand what I was creating. 
+The AI recommended React.js because it said that it is component based, has simple to manage states, a reactive US, and a lot of packages to be used in potential future upgrades. 
+I did not hit a ceiling with the vibe coding on this small project. I feel the game is complete, and was unable to break it. I want to do more of the coding myself in the future, with the AI as more of a helper rather than doing it all at my instruction.
+This taught me that AI tools are very powerful and can create basic applications with good prompting. I can use this to be able to have AI create indivbidual portions of projects that could be tedious for me to complete on my own, when the AI can produce to code in a much shorter time.
